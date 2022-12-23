@@ -1,0 +1,128 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+    <div class="container-fluid">    
+       
+    <ul class = "nav navbar-nav">
+        
+        
+        
+        <button (click)="back()"class="btn btn-primary navbar-btn">Go Back</button>      
+        
+    </ul>
+  
+    </div>
+  </nav>
+  <div style="background-image: url('https://www.comohotels.com/sites/default/files/COMO_Metropolitan_Miami_Beach_ZOOM_Backgrounds_4_0.jpg');background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
+  <div class="row d-flex justify-content-center">
+      <div class="col-lg-4">
+        <h2 style="text-align: center;"class="fw-bold mb-5"><b style="color:mediumblue">InternalMarks Register</b></h2>
+        <form #registerform="ngForm" (ngSubmit)="internalmaksRegister()">
+          
+          <div class="row">
+           <!-- <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="number" name="coursesId" class="form-control" placeholder="CoursesId" [(ngModel)]="internalmarks.coursesId"pattern="[0-9]"#coursesId="ngModel"
+                [class.is-invalid]="coursesId.invalid&&coursesId.touched"/>
+                <div *ngIf="coursesId.errors ">
+                  <small class="text-danger" *ngIf="coursesId.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="coursesId.errors?.['pattern']">enter a valid coursesId</small>
+                </div>
+                
+              </div>
+            </div>-->
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="internalmarks1" class="form-control" placeholder="InternalMarks1" [(ngModel)]="internalmarks.internalmarks1"pattern="[0-9]{2}"#internalmarks1="ngModel"
+                [class.is-invalid]="internalmarks1.invalid&&internalmarks1.touched"/>
+                <div *ngIf="internalmarks1.errors">
+                  <small class="text-danger" *ngIf="internalmarks1.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="internalmarks1.errors?.['pattern']">enter a valid internalmarks1</small>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="internalmarks2" class="form-control" placeholder="InternalMarks2" [(ngModel)]="internalmarks.internalmarks2"pattern="[0-9]{2}"#internalmarks2="ngModel"
+                [class.is-invalid]="internalmarks1.invalid&&internalmarks1.touched"/>
+                <div *ngIf="internalmarks2.errors">
+                  <small class="text-danger" *ngIf="internalmarks2.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="internalmarks2.errors?.['pattern']">enter a valid internalmarks2</small>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="internalmarks3" class="form-control" placeholder="InternalMarks3" [(ngModel)]="internalmarks.internalmarks3"pattern="[0-9]{2}"#internalmarks3="ngModel"
+                [class.is-invalid]="internalmarks3.invalid&&internalmarks3.touched"/>
+                <div *ngIf="internalmarks3.errors">
+                  <small class="text-danger" *ngIf="internalmarks3.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="internalmarks3.errors?.['pattern']">enter a valid internalmarks3</small>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="assignmentmarks" class="form-control" placeholder="AssignmentMarks" [(ngModel)]="internalmarks.assignmentmarks"pattern="[0-9]{2}"#assignmentmarks="ngModel"
+                [class.is-invalid]="assignmentmarks.invalid&&assignmentmarks.touched"/>
+                <div *ngIf="assignmentmarks.errors">
+                  <small class="text-danger" *ngIf="assignmentmarks.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="assignmentmarks.errors?.['pattern']">enter a valid assignmentmarks</small>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="totalmarks" class="form-control" placeholder="TotalMarks" [(ngModel)]="internalmarks.totalmarks"pattern="[0-9]{3}"#totalmarks="ngModel"
+                [class.is-invalid]="totalmarks.invalid&&totalmarks.touched"/>
+                <div *ngIf="totalmarks.errors">
+                  <small class="text-danger" *ngIf="totalmarks.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="totalmarks.errors?.['pattern']">enter a valid totalmarks</small>
+                </div>
+                
+              </div>
+            </div>
+           <!-- <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" name="courseName" class="form-control" placeholder="CourseName"[(ngModel)]="internalmarks.courseName"required  pattern="[a-zA-Z'-'\s]*"#courseName="ngModel" 
+                [class.is-invalid]="courseName.invalid&&courseName.touched"/>
+               
+                <div *ngIf="courseName.errors && (courseName.invalid && courseName.touched)">
+                  <small class="text-danger" *ngIf="courseName.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="courseName.errors?.['pattern']">enter a valid courseName</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="date" name="endDate" class="form-control" placeholder="CourseEndDate"[(ngModel)]="internalmarks.endDate"required #endDate="ngModel" 
+                [class.is-invalid]="endDate.invalid&&endDate.touched"/>
+                
+                <div *ngIf="endDate.errors && (endDate.invalid && endDate.touched)">
+                  <small class="text-danger" *ngIf="endDate.errors?.['required']">required field</small>
+                  <small class="text-danger"*ngIf="endDate.errors?.['pattern']">enter a valid EndDate</small>
+                </div>
+              </div>
+            </div>
+            
+          -->
+  
+         
+          <button [disabled]="registerform.form.invalid"type="submit" class="btn btn-primary btn-block mb-4">
+           Register
+          </button>
+          
+             </div>
+          </form>
+       </div>
+    
+         <br>
+         <br><br><br>
+  <span id="copyright"style="text-align:center"><b style="color: oldlace;">&reg;All rights reserved</b></span>
+</div>
+</div>
